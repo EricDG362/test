@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, TextInput, TouchableWithoutFeedback, KeyboardAvoidingView, 
-    ImageBackground, StyleSheet, Platform, Keyboard, Pressable, View } from 'react-native';
+    ImageBackground, StyleSheet, Platform, Keyboard, Pressable, View, modal, 
+    Modal} from 'react-native';
 
 const Login = () => {
   return (
@@ -16,7 +17,7 @@ const Login = () => {
         >
           <TextInput
             style={[estilo.input, estilo.inputPrime]}
-            placeholder="INGRESE USUARIO"
+            placeholder="INGRESAR USUARIO"
             placeholderTextColor={'#000'}
             keyboardType="default"
           />
@@ -45,6 +46,13 @@ const Login = () => {
             </Pressable>
           </View>
 
+          <Modal
+          animationType='slide'
+          visible={false}
+          >
+            <Text>Desde modal</Text>
+          </Modal>
+
         </ImageBackground>
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
@@ -64,7 +72,7 @@ const estilo = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 15,
     width: '80%',
-    height: 40,
+    height: 35,
     paddingLeft: 10,
     marginBottom: 20,
     textAlign: 'center'
@@ -84,6 +92,7 @@ const estilo = StyleSheet.create({
   },
   botontext: {
     textAlign: 'center',
+    fontWeight:900
   },
   // Alineación horizontal y centrado para el texto y el botón de "Crear cuenta"
   padre: {
