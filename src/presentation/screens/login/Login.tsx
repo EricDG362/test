@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, TextInput, TouchableWithoutFeedback, KeyboardAvoidingView, 
-    ImageBackground, StyleSheet, Platform, Keyboard, Pressable, View, modal, 
-    Modal} from 'react-native';
+    ImageBackground, StyleSheet, Platform, Keyboard, Pressable, View, 
+    } from 'react-native';
+
+    import FormularioModal from './FormularioModal';
 
 const Login = () => {
+  const [modalVisible, setModalVisible] = useState<boolean> (false)
+ 
+ 
+
+
+
+
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <KeyboardAvoidingView
@@ -41,17 +51,17 @@ const Login = () => {
           {/* Contenedor que alinea el texto y el botón */}
           <View style={estilo.padre}>
             <Text style={estilo.text}>Si no posees una cuenta. </Text>
-            <Pressable>
+            <Pressable
+            onPress={()=>{setModalVisible(true)}}>
               <Text style={[estilo.text, estilo.textcreate]}>CREAR CUENTA</Text>
             </Pressable>
           </View>
 
-          <Modal
-          animationType='slide'
-          visible={false}
-          >
-            <Text>Desde modal</Text>
-          </Modal>
+            <FormularioModal 
+
+            modalVisible={modalVisible}
+            />
+       
 
         </ImageBackground>
       </KeyboardAvoidingView>
