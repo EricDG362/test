@@ -5,11 +5,10 @@ import { Text, TextInput, TouchableWithoutFeedback, KeyboardAvoidingView,
 
     import FormularioModal from './FormularioModal';
 
+
+
 const Login = () => {
   const [modalVisible, setModalVisible] = useState<boolean> (false)
- 
- 
-
 
 
 
@@ -27,16 +26,16 @@ const Login = () => {
         >
           <TextInput
             style={[estilo.input, estilo.inputPrime]}
-            placeholder="INGRESAR USUARIO"
+            placeholder="USUARIO"
             placeholderTextColor={'#000'}
             keyboardType="default"
           />
 
           <TextInput
             style={[estilo.input]}
-            placeholder="CONTRASEÑA"
+            placeholder="PASSWORD"
             placeholderTextColor={'#000'}
-            keyboardType="default"
+            secureTextEntry={true} // Esto oculta el texto
           />
 
           <Pressable
@@ -79,13 +78,17 @@ const estilo = StyleSheet.create({
     alignItems: 'center', // Alinea el contenido horizontalmente
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)', // Blanco con 70% de opacidad
     borderRadius: 15,
     width: '80%',
     height: 35,
     paddingLeft: 10,
     marginBottom: 20,
-    textAlign: 'center'
+    textAlign: 'center',
+    color:'#fff',
+    fontWeight:700,
+   
+    
   },
   inputPrime: {
     marginTop: 450, // Puedes ajustar esto según el espacio necesario
@@ -103,6 +106,7 @@ const estilo = StyleSheet.create({
   botontext: {
     textAlign: 'center',
     fontWeight:900
+    
   },
   // Alineación horizontal y centrado para el texto y el botón de "Crear cuenta"
   padre: {
