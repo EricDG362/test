@@ -1,6 +1,14 @@
 import React from 'react'
 import {Text} from 'react-native'
-const Product = () => {
+
+
+
+
+
+
+
+
+const Archivo = () => {
 
 
 
@@ -11,4 +19,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default Archivo

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Text, TextInput, TouchableWithoutFeedback, KeyboardAvoidingView, 
-    ImageBackground, StyleSheet, Platform, Keyboard, Pressable, View, 
-    } from 'react-native';
+import {
+  Text, TextInput, TouchableWithoutFeedback, KeyboardAvoidingView,
+  ImageBackground, StyleSheet, Platform, Keyboard, Pressable, View,
+} from 'react-native';
 
-    import FormularioModal from './FormularioModal';
+import FormularioModal from './FormularioModal';
 
 
 
 const Login = () => {
-  const [modalVisible, setModalVisible] = useState<boolean> (false)
+  const [modalVisible, setModalVisible] = useState<boolean>(false)
 
 
 
@@ -26,9 +27,9 @@ const Login = () => {
         >
           <TextInput
             style={[estilo.input, estilo.inputPrime]}
-            placeholder="USUARIO"
+            placeholder="EMAIL"
             placeholderTextColor={'#000'}
-            keyboardType="default"
+            keyboardType='email-address'
           />
 
           <TextInput
@@ -51,16 +52,18 @@ const Login = () => {
           <View style={estilo.padre}>
             <Text style={estilo.text}>Si no posees una cuenta. </Text>
             <Pressable
-            onPress={()=>{setModalVisible(true)}}>
-              <Text style={[estilo.text, estilo.textcreate]}>CREAR CUENTA</Text>
+              onPress={() => { setModalVisible(true) }}>
+              <Text style={[estilo.text, estilo.textcreate]}>CREAR UNA CUENTA</Text>
             </Pressable>
           </View>
 
-            <FormularioModal 
+          <FormularioModal
 
             modalVisible={modalVisible}
-            />
-       
+            setModalVisible={setModalVisible}
+
+          />
+
 
         </ImageBackground>
       </KeyboardAvoidingView>
@@ -85,10 +88,10 @@ const estilo = StyleSheet.create({
     paddingLeft: 10,
     marginBottom: 20,
     textAlign: 'center',
-    color:'#fff',
-    fontWeight:700,
-   
-    
+    color: '#fff',
+    fontWeight: 700,
+
+
   },
   inputPrime: {
     marginTop: 450, // Puedes ajustar esto según el espacio necesario
@@ -105,8 +108,8 @@ const estilo = StyleSheet.create({
   },
   botontext: {
     textAlign: 'center',
-    fontWeight:900
-    
+    fontWeight: 900
+
   },
   // Alineación horizontal y centrado para el texto y el botón de "Crear cuenta"
   padre: {
